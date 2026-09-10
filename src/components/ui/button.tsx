@@ -16,6 +16,8 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        nivaa: "group rounded-full bg-primary px-5 text-primary-foreground shadow-none hover:bg-primary/88",
+        nivaaOutline: "group rounded-full border border-primary/45 bg-transparent px-5 text-foreground shadow-none hover:bg-primary hover:text-primary-foreground",
       },
       size: {
         default: "h-9 px-4 py-2",
