@@ -155,7 +155,7 @@
     letter-spacing: 0;
     overflow-x: hidden;
   }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
   button, a { outline-offset: 4px; }
   :focus-visible { outline: 1px solid var(--color-foreground); }
 }

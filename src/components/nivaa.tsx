@@ -59,7 +59,8 @@ export function ArrowButton({children, outline=false}:{children:ReactNode;outlin
 
 export function HeroVideo() {
   const video = useRef<HTMLVideoElement>(null); const [active,setActive]=useState(false);
-  const start=()=>{setActive(true); video.current?.play().catch(()=>setActive(false))};
+  useEffect(()=>{if(active){video.current?.play().catch(()=>setActive(false))}},[active]);
+  const start=()=>setActive(true);
   const stop=()=>{setActive(false); if(video.current){video.current.pause(); video.current.currentTime=0}};
   return <div className="hero-media group" onMouseEnter={start} onMouseLeave={stop} onClick={()=>active?stop():start} role="button" tabIndex={0} onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();active?stop():start()}}} aria-label={active?"Stop living room film":"Play living room film"}>
     <img src={posterAsset.url} alt="Sunlit NIVAA living room" width="1280" height="720" className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${active?"opacity-0":"opacity-100"}`}/>
