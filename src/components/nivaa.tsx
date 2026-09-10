@@ -7,7 +7,7 @@ import living from "@/assets/nivaa-living.jpg";
 import dining from "@/assets/nivaa-dining.jpg";
 import retail from "@/assets/nivaa-retail.jpg";
 import materials from "@/assets/nivaa-materials.jpg";
-import videoAsset from "@/assets/hero-video.mp4.asset.json";
+import videoAsset from "@/assets/hero-video-web.mp4.asset.json";
 import posterAsset from "@/assets/hero-poster.jpg.asset.json";
 
 export const imagery = { living, dining, retail, materials };
