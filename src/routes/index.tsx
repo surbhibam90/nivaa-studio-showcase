@@ -28,10 +28,15 @@ const projects=[
 const serviceSurfaces=["bg-sage/55 blob-a","bg-sand/55 blob-b","bg-sage/55 blob-a","bg-sand/55 blob-b"];
 
 function HomePage(){return <main>
-  <section className="relative overflow-hidden pt-28 md:pt-36"><div className="shell grid min-h-[790px] items-center gap-10 pb-28 lg:grid-cols-[.68fr_1.32fr]">
-    <Reveal><Eyebrow>Interior Design Studio</Eyebrow><h1 className="display-xl">Beautiful<br/>Spaces<br/><em>Brighter</em> Lives</h1><p className="mt-7 max-w-sm text-sm leading-7 text-muted-foreground">We design soulful, functional and timeless spaces that reflect your story.</p><div className="mt-7"><Link to="/portfolio" className="inline-flex items-center gap-3 rounded-full bg-primary py-2.5 pr-2.5 pl-5 text-sm text-primary-foreground">Explore Our Work <span className="grid size-8 place-items-center rounded-full bg-background text-foreground"><ArrowRight className="size-4"/></span></Link></div>
-    <div className="mt-14 grid max-w-md grid-cols-3 divide-x divide-border"><Stat n="150+" t="Projects"/><Stat n="100+" t="Happy Clients"/><Stat n="8+" t="Years of Experience"/></div></Reveal><Reveal><HeroVideo/></Reveal>
-  </div><div className="absolute -bottom-16 -left-[10%] h-36 w-[70%] rounded-[50%] bg-sage/45"/></section>
+  <section className="relative flex min-h-svh items-center overflow-hidden">
+    <HeroVideo full/>
+    <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/85 via-background/30 to-background/15"/>
+    <div className="shell relative pb-24 pt-32 md:pt-36">
+      <Reveal><Eyebrow>Interior Design Studio</Eyebrow><h1 className="display-xl">Beautiful<br/>Spaces<br/><em>Brighter</em> Lives</h1><p className="mt-7 max-w-sm text-sm leading-7 text-muted-foreground">We design soulful, functional and timeless spaces that reflect your story.</p><div className="mt-7"><Link to="/portfolio" className="inline-flex items-center gap-3 rounded-full bg-primary py-2.5 pr-2.5 pl-5 text-sm text-primary-foreground">Explore Our Work <span className="grid size-8 place-items-center rounded-full bg-background text-foreground"><ArrowRight className="size-4"/></span></Link></div>
+      <div className="mt-14 grid max-w-md grid-cols-3 divide-x divide-border"><Stat n="150+" t="Projects"/><Stat n="100+" t="Happy Clients"/><Stat n="8+" t="Years of Experience"/></div></Reveal>
+    </div>
+    <div className="absolute -bottom-16 -left-[10%] h-36 w-[70%] rounded-[50%] bg-sage/45"/>
+  </section>
 
   <section className="bg-sage/45 py-24 md:py-32"><div className="shell grid items-center gap-14 md:grid-cols-2"><Reveal className="relative"><img src={imagery.dining} loading="lazy" alt="NIVAA dining room" width={1536} height={1024} className="blob-b h-[28rem] w-full object-cover"/><span className="absolute left-1/2 top-1/2 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-background shadow-soft"><span className="ml-1 border-y-[7px] border-l-[11px] border-y-transparent border-l-foreground"/></span></Reveal><Reveal><Eyebrow>Who We Are</Eyebrow><h2 className="display-lg">Designing<br/><em>More</em> Than Spaces</h2><p className="mt-6 max-w-lg leading-7 text-muted-foreground">We create soulful, functional interiors around how people truly live—spaces with ease, warmth and a sense of belonging.</p><a href="mailto:hello@nivaastudio.com" className="mt-7 inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm">Our Story <ArrowRight className="size-4"/></a></Reveal></div></section>
 
