@@ -30,7 +30,7 @@ const serviceSurfaces=["bg-sage/55 blob-a","bg-sand/55 blob-b","bg-sage/55 blob-
 function HomePage(){return <main>
   <section className="relative flex min-h-svh items-center overflow-hidden">
     <HeroVideo full/>
-    <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/95 via-background/40 to-background/25"/>
+    <div className="pointer-events-none absolute inset-0 bg-gradient-to-b"/>
     <div className="shell relative pb-24 pt-32 md:pt-36">
       <Reveal><Eyebrow>Interior Design Studio</Eyebrow><h1 className="display-xl text-shadow-sm">Beautiful<br/>Spaces<br/><em>Brighter</em> Lives</h1><p className="mt-7 max-w-sm text-sm leading-7 text-muted-foreground">We design soulful, functional and timeless spaces that reflect your story.</p><div className="mt-7"><Link to="/portfolio" className="inline-flex items-center gap-3 rounded-full bg-primary py-2.5 pr-2.5 pl-5 text-sm text-primary-foreground">Explore Our Work <span className="grid size-8 place-items-center rounded-full bg-background text-foreground"><ArrowRight className="size-4"/></span></Link></div>
       <div className="mt-14 grid max-w-md grid-cols-3 divide-x divide-border"><Stat n="150+" t="Projects"/><Stat n="100+" t="Happy Clients"/><Stat n="8+" t="Years of Experience"/></div></Reveal>
