@@ -22,7 +22,7 @@ const links = [
 ];
 
 export function Brand() {
-  return <Link to="/" className="block shrink-0" aria-label="NIVAA home"><span className="block font-display text-[1.65rem] leading-none tracking-[.22em]">NIVAA</span><span className="mt-1 block text-[.43rem] tracking-[.14em]">SPACES THAT FEEL LIKE YOU</span></Link>;
+  return <Link to="/" className="block shrink-0 font-extrabold" aria-label="NIVAA home"><span className="block font-display text-[1.65rem] leading-none tracking-[.22em]">NIVAA</span><span className="mt-1 block text-[.43rem] tracking-[.14em]">SPACES THAT FEEL LIKE YOU</span></Link>;
 }
 
 export function Navbar() {
@@ -35,7 +35,7 @@ export function Navbar() {
       <div className="shell grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 lg:grid-cols-[auto_1fr_auto]">
         <Brand />
         <nav className="hidden items-center justify-center gap-7 lg:flex" aria-label="Primary navigation">
-          {links.map(link => link.to ? <Link key={link.label} to={link.to} className={`nav-link ${pathname === link.to ? "is-active" : ""}`}>{link.label}</Link> : <button key={link.label} type="button" title="Coming soon" className="nav-link opacity-55">{link.label}</button>)}
+          {links.map(link => link.to ? <Link key={link.label} to={link.to} className={`nav-link ${pathname === link.to ? "is-active" : ""}`}>{link.label}</Link> : <button key={link.label} type="button" title="Coming soon" className="nav-link ">{link.label}</button>)}
         </nav>
         <div className="hidden lg:block"><Button asChild variant="nivaaOutline" size="lg"><a href="mailto:hello@nivaastudio.com">Let&apos;s Talk <ArrowRight /></a></Button></div>
         <Button variant="ghost" size="icon" className="h-11 w-11 justify-self-end rounded-full lg:hidden" aria-label="Open menu" onClick={() => setOpen(true)}><Menu className="size-5" /></Button>
