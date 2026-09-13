@@ -164,7 +164,7 @@
 @utility display-xl { font-family: var(--font-display); font-size: clamp(3.8rem, 7vw, 7.3rem); line-height: .79; font-weight: 400; }
 @utility display-lg { font-family: var(--font-display); font-size: clamp(3.2rem, 5vw, 5.7rem); line-height: .86; font-weight: 400; }
 @utility display-md { font-family: var(--font-display); font-size: clamp(2.6rem, 4vw, 4.6rem); line-height: .9; font-weight: 400; }
-@utility nav-link { position: relative; font-size: .72rem; color: var(--color-foreground); transition: opacity .25s ease; &::after { content:""; position:absolute; left:50%; bottom:-.6rem; width:.25rem; height:.25rem; border-radius:50%; background:currentColor; opacity:0; transform:scale(0); transition:all .25s ease; } &:hover::after, &.is-active::after { opacity:1; transform:scale(1); } }
+@utility nav-link { position: relative; font-size: 1rem; font-weight: bold; color: var(--color-foreground); transition: opacity .25s ease; &::after { content:""; position:absolute; left:50%; bottom:-.6rem; width:.25rem; height:.25rem; border-radius:50%; background:currentColor; opacity:0; transform:scale(0); transition:all .25s ease; } &:hover::after, &.is-active::after { opacity:1; transform:scale(1); } }
 @utility hero-media { position:relative; min-height:clamp(32rem, 56vw, 46rem); overflow:hidden; cursor:pointer; border-radius:52% 0 0 10% / 46% 0 0 9%; box-shadow:var(--shadow-soft); }
 @media (min-width:1024px) {
   .hero-media { margin-right: calc(-1 * max(1rem, (100vw - 84rem) / 2)); border-radius:56% 0 0 14% / 48% 0 0 12%; }
