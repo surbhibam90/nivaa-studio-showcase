@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Building2, Home, Lamp, Leaf } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import { ArrowButton, Eyebrow, FinalCTA, HeroVideo, imagery, Reveal } from "@/components/nivaa";
 
@@ -14,10 +14,10 @@ export const Route = createFileRoute("/")({
 });
 
 const services=[
-  {title:"Residential Interiors",icon:Home,copy:"Homes shaped around your rituals and rhythms."},
-  {title:"Commercial Spaces",icon:Building2,copy:"Purposeful places for people and ideas."},
-  {title:"Furniture & Styling",icon:Lamp,copy:"The final layer that makes a room yours."},
-  {title:"Turnkey Solutions",icon:Leaf,copy:"One thoughtful journey, concept to completion."},
+  {title:"Residential Interiors",image:imagery.living,copy:"Homes shaped around your rituals and rhythms."},
+  {title:"Commercial Spaces",image:imagery.retail,copy:"Purposeful places for people and ideas."},
+  {title:"Furniture & Styling",image:imagery.materials,copy:"The final layer that makes a room yours."},
+  {title:"Turnkey Solutions",image:imagery.dining,copy:"One thoughtful journey, concept to completion."},
 ];
 const projects=[
   {name:"Modern Villa",place:"Ahmedabad",image:imagery.living,shape:"blob-a"},
@@ -25,7 +25,6 @@ const projects=[
   {name:"Luxury Office",place:"Bengaluru",image:imagery.retail,shape:"arch"},
   {name:"Cozy Bedroom",place:"Jamnagar",image:imagery.living,shape:"blob-b"},
 ];
-const serviceSurfaces=["bg-sage/55 blob-a","bg-sand/55 blob-b","bg-sage/55 blob-a","bg-sand/55 blob-b"];
 
 function HomePage(){return <main>
   <section className="relative flex min-h-svh items-center overflow-hidden">
@@ -40,7 +39,7 @@ function HomePage(){return <main>
 
   <section className="bg-sage/45 py-24 md:py-32"><div className="shell grid items-center gap-14 md:grid-cols-2"><Reveal className="relative"><img src={imagery.dining} loading="lazy" alt="NIVAA dining room" width={1536} height={1024} className="blob-b h-[28rem] w-full object-cover"/><span className="absolute left-1/2 top-1/2 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-background shadow-soft"><span className="ml-1 border-y-[7px] border-l-[11px] border-y-transparent border-l-foreground"/></span></Reveal><Reveal><Eyebrow>Who We Are</Eyebrow><h2 className="display-lg">Designing<br/><em>More</em> Than Spaces</h2><p className="mt-6 max-w-lg leading-7 text-muted-foreground">We create soulful, functional interiors around how people truly live—spaces with ease, warmth and a sense of belonging.</p><a href="mailto:hello@nivaastudio.com" className="mt-7 inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm">Our Story <ArrowRight className="size-4"/></a></Reveal></div></section>
 
-  <section className="relative bg-background py-24"><div className="shell"><Reveal><Eyebrow>What We Do</Eyebrow><h2 className="display-md">Spaces for Every Story</h2></Reveal><div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{services.map((s,i)=><Reveal key={s.title}><motion.article whileHover={{y:-7}} className="group"><div className={`grid aspect-[.9] place-items-center ${serviceSurfaces[i]}`}><s.icon strokeWidth={1.2} className="size-11"/></div><h3 className="mt-5 font-display text-2xl">{s.title}</h3><p className="mt-2 text-xs leading-5 text-muted-foreground">{s.copy}</p><ArrowRight className="mt-4 size-4 transition-transform group-hover:translate-x-1"/></motion.article></Reveal>)}</div></div></section>
+  <section className="relative bg-background py-24"><div className="shell"><Reveal><Eyebrow>What We Do</Eyebrow><h2 className="display-md">Spaces for Every Story</h2></Reveal><div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">{services.map((s,i)=><Reveal key={s.title}><motion.article whileHover={{y:-7}} className="group"><div className={`relative aspect-[.9] overflow-hidden ${i%2===0?"blob-a":"blob-b"}`}><motion.img variants={{hover:{scale:1.04}}} transition={{duration:.7}} src={s.image} loading="lazy" alt={`${s.title} interior`} width={1536} height={1024} className="h-full w-full object-cover"/></div><h3 className="mt-5 font-display text-2xl">{s.title}</h3><p className="mt-2 text-xs leading-5 text-muted-foreground">{s.copy}</p><ArrowRight className="mt-4 size-4 transition-transform group-hover:translate-x-1"/></motion.article></Reveal>)}</div></div></section>
 
   <section className="bg-muted/50 py-24"><div className="shell"><Reveal className="mb-12 flex items-end justify-between gap-6"><div><Eyebrow>Featured Work</Eyebrow><h2 className="display-md">Spaces<br/>That Speak</h2></div><Link to="/portfolio" className="hidden items-center gap-2 text-sm md:flex">View all projects <ArrowRight className="size-4"/></Link></Reveal><div className="grid gap-5 md:grid-cols-12">{projects.map((p,i)=><Project key={p.name} {...p} className={i===0?"md:col-span-5":i===1?"md:col-span-3":"md:col-span-2"}/>)}</div></div></section>
 
